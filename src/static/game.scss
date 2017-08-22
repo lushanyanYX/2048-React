@@ -1,0 +1,62 @@
+@for $row from 0 through 3 {
+  @for $column from 0 through 3 {
+    .position-#{$row}-#{$column} {
+      top: 120 * $row + 20px;
+      left: 120 * $column + 20px;
+    }
+  }
+}
+
+@for $fromRow from 0 through 3 {
+  @for $toRow from 0 through 3 {
+    $name: row-from-#{$fromRow}-to-#{$toRow};
+    @if $fromRow == $toRow {
+      .#{$name} {
+        top: $fromRow * 120 + 20px;
+      }
+    }
+    @else {
+      .#{$name} {
+        animation-duration: 0.20s;
+        animation-name: $name;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes #{$name} {
+        from {
+          top: 120 * $fromRow + 20px;
+        }
+        to {
+          top: 120 * $toRow + 20px;
+        }
+      }
+    }
+  }
+}
+
+@for $fromColumn from 0 through 3 {
+  @for $toColumn from 0 through 3 {
+    $name: column-from-#{$fromColumn}-to-#{$toColumn};
+    @if $fromColumn == $toColumn {
+      .#{$name} {
+        left: $fromColumn * 120 + 20px;
+      }
+    }
+    @else {
+      .#{$name} {
+        animation-duration: 0.20s;
+        animation-name: $name;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes #{$name} {
+        from {
+          left: 120 * $fromColumn + 20px;
+        }
+        to {
+          left: 120 * $toColumn + 20px;
+        }
+      }
+    }
+  }
+}
