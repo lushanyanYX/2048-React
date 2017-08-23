@@ -3,6 +3,7 @@ class Board {
         this.fourPercent = 0.2; // 4出现概率
         this.cells = [];
         this.tiles = [];
+        this.gameOver = false;
         for(let row = 0; row < 4; row++) {
             this.cells.push([]);
             for(let column = 0; column < 4; column++) {
@@ -52,7 +53,7 @@ class Board {
     moveleft() {
         let isChanged = false;
         for(let row = 0; row < 4; row++) {
-            let list = this.cells[row].filter(tile => tile.value !== 0);
+            let list = this.cells[row].filter(tile => tile.value);
             for(let i = 0; i < list.length; i++) {
                 isChanged |= (list[i].value !== this.cells[row][i].value)
                 if(i > 0 && list[i].value === list[i-1].value && !list[i-1].mergedInto) {
@@ -89,7 +90,7 @@ class Board {
                 tile.markForDeletion = false;
             })
         })
-        this.consoleValue();
+        // this.consoleValue();
     }
 
     rotateLeft(){
@@ -115,9 +116,31 @@ class Board {
         }
         if(isMoved) {
             this.addRandomTile();
+            this.gameOver = this.hasLost();
         }
         this.setPosition();
         return this;
+    }
+
+    hasLost() {
+        if(this.canRowMove()) return false;
+        this.cells = this.rotateLeft();
+        if(this.canRowMove()) return false;
+        for(let i = 0; i < 3; i++) {
+            this.cells = this.rotateLeft();
+        }
+        return true;
+    }
+
+    canRowMove() {
+        for(let row = 0; row < 4; row++) {
+            let rowList = this.cells[row].filter(tile => tile.value);
+            if(rowList.length < 4) return true;
+            for(let i = 1; i < 4; i++) {
+                if(rowList[i-1].value === rowList[i].value) return true;
+            }
+        }
+        return false;
     }
     // for debug
     consoleValue() {
@@ -140,7 +163,11 @@ class Tile {
     }
 
     isNew() {
-        return this.oldRow == -1 && !this.mergedInto;
+        return this.oldRow === -1 && !this.mergedInto;
+    }
+
+    hasMoved() {
+        return this.mergedInto || !this.oldRow !==  -1 && (this.oldRow !== this.row || this.oldColumn !== this.column);
     }
 
     fromRow() {

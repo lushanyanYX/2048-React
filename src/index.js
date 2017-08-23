@@ -21,7 +21,10 @@ class BoardView extends React.Component {
     }
     
     handleKeyDown(event) {
-        if(this.state.board.getEmptyNum() === 0) return;
+        if(this.state.board.gameOver) {
+            alert("game over !");
+            this.setState({board: new Board()});
+        }
         if(event.keyCode >=37 && event.keyCode <= 40) {
             event.preventDefault();
             let direction = event.keyCode - 37;
@@ -36,7 +39,6 @@ class BoardView extends React.Component {
                 cells.push(<div className="cell" key={row * 4 + column}></div>);
             })
         })
-        console.log(this.state.board.tiles);
         let tiles = this.state.board.tiles
             .filter(tile => tile.value !== 0)
             .map((tile,index) => <TileView tile={tile} key={index}></TileView>);
@@ -51,10 +53,6 @@ class BoardView extends React.Component {
 
 class TileView extends React.Component {
     shouldComponentUpdate(nextProps) {
-        if(this.props.tile === nextProps.tile) {
-            return true;
-        }
-
         return true;
     }
     render() {
