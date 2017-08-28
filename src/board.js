@@ -123,12 +123,14 @@ class Board {
     }
 
     hasLost() {
-        if(this.canRowMove()) return false;
+        let canMove = this.canRowMove();
+        if(canMove) return false;
         this.cells = this.rotateLeft();
-        if(this.canRowMove()) return false;
+        canMove = this.canRowMove()
         for(let i = 0; i < 3; i++) {
             this.cells = this.rotateLeft();
         }
+        if(canMove) return false;
         return true;
     }
 
