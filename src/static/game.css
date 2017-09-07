@@ -83,61 +83,61 @@
 }
 
 .row-from-0-to-1 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-0-to-1;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-0-to-1 {
-  from {
+  0% {
     top: 20px;
   }
-  to {
+  100% {
     top: 140px;
   }
 }
 
 .row-from-0-to-2 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-0-to-2;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-0-to-2 {
-  from {
+  0% {
     top: 20px;
   }
-  to {
+  100% {
     top: 260px;
   }
 }
 
 .row-from-0-to-3 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-0-to-3;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-0-to-3 {
-  from {
+  0% {
     top: 20px;
   }
-  to {
+  100% {
     top: 380px;
   }
 }
 
 .row-from-1-to-0 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-1-to-0;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-1-to-0 {
-  from {
+  0% {
     top: 140px;
   }
-  to {
+  100% {
     top: 20px;
   }
 }
@@ -147,61 +147,61 @@
 }
 
 .row-from-1-to-2 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-1-to-2;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-1-to-2 {
-  from {
+  0% {
     top: 140px;
   }
-  to {
+  100% {
     top: 260px;
   }
 }
 
 .row-from-1-to-3 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-1-to-3;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-1-to-3 {
-  from {
+  0% {
     top: 140px;
   }
-  to {
+  100% {
     top: 380px;
   }
 }
 
 .row-from-2-to-0 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-2-to-0;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-2-to-0 {
-  from {
+  0% {
     top: 260px;
   }
-  to {
+  100% {
     top: 20px;
   }
 }
 
 .row-from-2-to-1 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-2-to-1;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-2-to-1 {
-  from {
+  0% {
     top: 260px;
   }
-  to {
+  100% {
     top: 140px;
   }
 }
@@ -211,61 +211,61 @@
 }
 
 .row-from-2-to-3 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-2-to-3;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-2-to-3 {
-  from {
+  0% {
     top: 260px;
   }
-  to {
+  100% {
     top: 380px;
   }
 }
 
 .row-from-3-to-0 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-3-to-0;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-3-to-0 {
-  from {
+  0% {
     top: 380px;
   }
-  to {
+  100% {
     top: 20px;
   }
 }
 
 .row-from-3-to-1 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-3-to-1;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-3-to-1 {
-  from {
+  0% {
     top: 380px;
   }
-  to {
+  100% {
     top: 140px;
   }
 }
 
 .row-from-3-to-2 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
   animation-name: row-from-3-to-2;
   animation-fill-mode: forwards;
 }
 
 @keyframes row-from-3-to-2 {
-  from {
+  0% {
     top: 380px;
   }
-  to {
+  100% {
     top: 260px;
   }
 }
@@ -279,61 +279,65 @@
 }
 
 .column-from-0-to-1 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-0-to-1;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-0-to-1 {
-  from {
+  0% {
     left: 20px;
   }
-  to {
+  100% {
     left: 140px;
   }
 }
 
 .column-from-0-to-2 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-0-to-2;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-0-to-2 {
-  from {
+  0% {
     left: 20px;
   }
-  to {
+  100% {
     left: 260px;
   }
 }
 
 .column-from-0-to-3 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-0-to-3;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-0-to-3 {
-  from {
+  0% {
     left: 20px;
   }
-  to {
+  100% {
     left: 380px;
   }
 }
 
 .column-from-1-to-0 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-1-to-0;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-1-to-0 {
-  from {
+  0% {
     left: 140px;
   }
-  to {
+  100% {
     left: 20px;
   }
 }
@@ -343,61 +347,65 @@
 }
 
 .column-from-1-to-2 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-1-to-2;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-1-to-2 {
-  from {
+  0% {
     left: 140px;
   }
-  to {
+  100% {
     left: 260px;
   }
 }
 
 .column-from-1-to-3 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-1-to-3;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-1-to-3 {
-  from {
+  0% {
     left: 140px;
   }
-  to {
+  100% {
     left: 380px;
   }
 }
 
 .column-from-2-to-0 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-2-to-0;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-2-to-0 {
-  from {
+  0% {
     left: 260px;
   }
-  to {
+  100% {
     left: 20px;
   }
 }
 
 .column-from-2-to-1 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-2-to-1;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-2-to-1 {
-  from {
+  0% {
     left: 260px;
   }
-  to {
+  100% {
     left: 140px;
   }
 }
@@ -407,61 +415,65 @@
 }
 
 .column-from-2-to-3 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-2-to-3;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-2-to-3 {
-  from {
+  0% {
     left: 260px;
   }
-  to {
+  100% {
     left: 380px;
   }
 }
 
 .column-from-3-to-0 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-3-to-0;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-3-to-0 {
-  from {
+  0% {
     left: 380px;
   }
-  to {
+  100% {
     left: 20px;
   }
 }
 
 .column-from-3-to-1 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-3-to-1;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-3-to-1 {
-  from {
+  0% {
     left: 380px;
   }
-  to {
+  100% {
     left: 140px;
   }
 }
 
 .column-from-3-to-2 {
-  animation-duration: 0.20s;
+  animation-duration: 0.2s;
+  animation-delay: 0;
   animation-name: column-from-3-to-2;
   animation-fill-mode: forwards;
 }
 
 @keyframes column-from-3-to-2 {
-  from {
+  0% {
     left: 380px;
   }
-  to {
+  100% {
     left: 260px;
   }
 }

@@ -119,6 +119,7 @@ class Board {
             this.gameOver = this.hasLost();
         }
         this.setPosition();
+        // this.consoleValue();
         return this;
     }
 
@@ -169,7 +170,7 @@ class Tile {
     }
 
     hasMoved() {
-        return this.mergedInto || !this.oldRow !==  -1 && (this.oldRow !== this.row || this.oldColumn !== this.column);
+        return this.mergedInto || (!this.oldRow !==  -1 && (this.oldRow !== this.row || this.oldColumn !== this.column));
     }
 
     fromRow() {
@@ -186,6 +187,9 @@ class Tile {
     
     toColumn() {
         return this.mergedInto ? this.mergedInto.column : this.column;
+    }
+    consoleValue() {
+        console.log(this)
     }
 }
 

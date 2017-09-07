@@ -6,6 +6,8 @@ import './static/game.css';
 import {Board} from './board';
 import registerServiceWorker from './registerServiceWorker';
 
+let uniqueId = 0
+
 class BoardView extends React.Component {
     constructor(props) {
         super(props);
@@ -34,15 +36,14 @@ class BoardView extends React.Component {
 
     render() {
         let cells = [];
-        this.state.board.cells.map((rowList,row) => {
-            rowList.map((tile,column) => {
-                cells.push(<div className="cell" key={row * 4 + column}></div>);
-            })
+        cells = this.state.board.cells.map((rowList,row) => {
+            return rowList.map((tile,column) => <Cell key={row * 4 + column}></Cell>);
         })
         let tiles = this.state.board.tiles
             .filter(tile => tile.value !== 0)
-            .map((tile,index) => <TileView tile={tile} key={index}></TileView>);
+            .map((tile,index) => <TileView tile={tile} key={`${uniqueId++}`}></TileView>);
         return (
+            // <Header score={this.state.board.score} bestScore={this.state.board.bestScore}></Header>
             <div className="game-board">
                 <div className="cell-board">{cells}</div>
                 {tiles}
@@ -51,10 +52,16 @@ class BoardView extends React.Component {
     }
 }
 
-class TileView extends React.Component {
-    shouldComponentUpdate(nextProps) {
-        return true;
+class Cell extends React.Component {
+    shouldComponentUpdate() {
+        return false;
     }
+    render() {
+        return <div className="cell"></div>
+    }
+}
+
+class TileView extends React.Component {
     render() {
         let tile = this.props.tile;
         let classArray = [];
@@ -67,12 +74,16 @@ class TileView extends React.Component {
         else {
             if(tile.fromRow() !== tile.toRow()) {
                 classArray.push("row-from-" + tile.fromRow() + "-to-" + tile.toRow());
+                classArray.push("isMoving");
             }
             if(tile.fromColumn() !== tile.toColumn()) {
                 classArray.push("column-from-" + tile.fromColumn() + "-to-" + tile.toColumn());
+                classArray.push("isMoving");
             }
         }
+        if(tile.mergedInto) classArray.push("merged");
         let classes = classArray.join(" ");
+        tile.consoleValue();
         return (
             <div className={classes}>{tile.value}</div>
         )

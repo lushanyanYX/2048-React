@@ -1,3 +1,4 @@
+$time: 0.2s;
 @for $row from 0 through 3 {
   @for $column from 0 through 3 {
     .position-#{$row}-#{$column} {
@@ -12,22 +13,22 @@
     $name: row-from-#{$fromRow}-to-#{$toRow};
     @if $fromRow == $toRow {
       .#{$name} {
-        top: $fromRow * 120 + 20px;
+        top: $fromRow * 120px + 20px;
       }
     }
     @else {
       .#{$name} {
-        animation-duration: 0.20s;
+        animation-duration: $time;
         animation-name: $name;
         animation-fill-mode: forwards;
       }
 
       @keyframes #{$name} {
-        from {
-          top: 120 * $fromRow + 20px;
+        0% {
+          top: 120px * $fromRow + 20px;
         }
-        to {
-          top: 120 * $toRow + 20px;
+        100% {
+          top: 120px * $toRow + 20px;
         }
       }
     }
@@ -39,22 +40,23 @@
     $name: column-from-#{$fromColumn}-to-#{$toColumn};
     @if $fromColumn == $toColumn {
       .#{$name} {
-        left: $fromColumn * 120 + 20px;
+        left: $fromColumn * 120px + 20px;
       }
     }
     @else {
       .#{$name} {
-        animation-duration: 0.20s;
+        animation-duration: $time;
+        animation-delay: 0;
         animation-name: $name;
         animation-fill-mode: forwards;
       }
 
       @keyframes #{$name} {
-        from {
-          left: 120 * $fromColumn + 20px;
+        0% {
+          left: 120px * $fromColumn + 20px;
         }
-        to {
-          left: 120 * $toColumn + 20px;
+        100% {
+          left: 120px * $toColumn + 20px;
         }
       }
     }
