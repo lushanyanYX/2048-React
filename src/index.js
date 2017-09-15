@@ -6,8 +6,6 @@ import './static/game.css';
 import {Board} from './board';
 import registerServiceWorker from './registerServiceWorker';
 
-let uniqueId = 0
-
 class BoardView extends React.Component {
     constructor(props) {
         super(props);
@@ -41,7 +39,7 @@ class BoardView extends React.Component {
         })
         let tiles = this.state.board.tiles
             .filter(tile => tile.value !== 0)
-            .map((tile,index) => <TileView tile={tile} key={`${uniqueId++}`}></TileView>);
+            .map((tile,index) => <TileView tile={tile} key={tile.id}></TileView>);
         return (
             // <Header score={this.state.board.score} bestScore={this.state.board.bestScore}></Header>
             <div className="game-board">

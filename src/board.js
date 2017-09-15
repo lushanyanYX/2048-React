@@ -163,6 +163,7 @@ class Tile {
         this.oldColumn = -1;
         this.markForDeletion = false;
         this.mergedInto = null;
+        this.id = Tile.id++;
     }
 
     isNew() {
@@ -192,5 +193,7 @@ class Tile {
         console.log(this)
     }
 }
+
+Tile.id = 0;
 
 export {Board}
